@@ -26,16 +26,16 @@ import {
 // Fill in each profile / listing URL to make its badge a link. Badges
 // without a URL still show, but as plain marks rather than dead links.
 const socials = [
-  { name: 'Instagram', href: '', mark: <InstagramMark /> },
+  { name: 'Instagram', href: 'https://www.instagram.com/simien_ethiopa_tours', mark: <InstagramMark /> },
   { name: 'YouTube', href: '', mark: <YouTubeMark /> },
   { name: 'Facebook', href: '', mark: <FacebookMark /> },
-  { name: 'TikTok', href: '', mark: <TikTokMark /> },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@urbannomad34', mark: <TikTokMark /> },
   { name: 'X', href: '', mark: <XMark /> },
 ]
 
 const platforms = [
   { name: 'Viator', href: '', mark: <ViatorLogo /> },
-  { name: 'Tripadvisor', href: '', mark: <TripadvisorLogo /> },
+  { name: 'Tripadvisor', href: 'https://www.tripadvisor.com/Attraction_Review-g293791-d9999161-Reviews-Simien_Ethiopia_Tours_Day_Tours-Addis_Ababa.html', mark: <TripadvisorLogo /> },
   { name: 'SafariBookings', href: '', mark: <SafariBookingsLogo /> },
   { name: 'GetYourGuide', href: '', mark: <GetYourGuideLogo /> },
 ]
