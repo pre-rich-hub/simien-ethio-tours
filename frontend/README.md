@@ -1,8 +1,5 @@
 # Simien Ethiopia Tours
 
-Next.js frontend organised around domain features. The folder structure does not
-change public URLs, styling, content, or interaction behaviour.
-
 ```text
 frontend/
 ├── app/
