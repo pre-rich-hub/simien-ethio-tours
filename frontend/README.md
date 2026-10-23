@@ -1,7 +1,7 @@
 # Simien Ethiopia Tours
 
-Next.js frontend organised around domain features. The folder structure does
-not change public URLs, styling, content, or interaction behaviour.
+Next.js frontend organised around domain features. The folder structure does not
+change public URLs, styling, content, or interaction behaviour.
 
 ```text
 frontend/
@@ -52,11 +52,13 @@ frontend/
 ## Ownership rules
 
 - `app/` defines routes, layouts, metadata, and static generation. Pages compose
-  feature components; dynamic routes resolve parameters and handle missing records.
+  feature components; dynamic routes resolve parameters and handle missing
+  records.
 - `features/` owns domain components, data, types, utilities, client hooks, and
   backend API calls. Create each subfolder when it has a real responsibility.
 - `components/` contains UI shared across domains. A component specific to one
-  feature belongs in that feature; homepage-only sections live in `features/home/`.
+  feature belongs in that feature; homepage-only sections live in
+  `features/home/`.
 - `lib/` holds infrastructure and shared utilities.
 
 ## Domain boundaries
@@ -68,10 +70,11 @@ while festivals have calendar information. Both link to destinations and tours;
 neither is converted into a destination category by this structural refactor.
 
 Enquiries, newsletter subscriptions, authentication, admin management, and the
-support assistant each own their existing forms and interactions. About, contact,
-and how-we-travel own their page components in separate feature folders. Privacy
-and terms share the legal feature's sections and keep their content in its data
-folder. Public routes live directly under `app/`; locale routing is deferred.
+support assistant each own their existing forms and interactions. About,
+contact, and how-we-travel own their page components in separate feature
+folders. Privacy and terms share the legal feature's sections and keep their
+content in its data folder. Public routes live directly under `app/`; locale
+routing is deferred.
 
 ## Destinations as the feature pattern
 
@@ -97,7 +100,7 @@ features/destinations/
 reusable components, for example:
 
 ```tsx
-import { DestinationCard, DestinationGrid } from '@/features/destinations'
+import { DestinationCard, DestinationGrid } from "@/features/destinations";
 ```
 
 Feature internals use direct module imports to avoid importing their own barrel.
@@ -106,13 +109,13 @@ separate from reusable component exports. Keep server-only modules out of
 barrels consumed by client components.
 
 Existing catalogue lookups live in `utils/`; static records live in `data/`.
-`api/` is reserved for backend communication. Destinations, experiences, and blog
-currently use static catalogues, so no speculative HTTP client or loading hook
-is added. Tours preserve their existing API overlay and static fallback.
+`api/` is reserved for backend communication. Destinations, experiences, and
+blog currently use static catalogues, so no speculative HTTP client or loading
+hook is added. Tours preserve their existing API overlay and static fallback.
 
 Tour filtering state and URL synchronization live in `hooks/useTourFilters.ts`;
-filtering buttons live in `components/TourFilters.tsx`. Login state and submission
-handling live in `features/auth/hooks/useAuth.ts`.
+filtering buttons live in `components/TourFilters.tsx`. Login state and
+submission handling live in `features/auth/hooks/useAuth.ts`.
 
 ## Component responsibilities
 
@@ -127,7 +130,8 @@ The admin tour creation and editing screens compose shared editors from
 `features/admin/components/tours/form/`: basic information, description fields,
 included/excluded lists, itinerary days, image uploads, gallery selection,
 categories, and blocked dates. Their request and state handling lives in
-`features/admin/hooks/`, with shared editor types in `types/tour-editor.types.ts`.
+`features/admin/hooks/`, with shared editor types in
+`types/tour-editor.types.ts`.
 
 `components/layout/Navbar.tsx` composes the wordmark, desktop navigation,
 language picker, and mobile navigation from `components/layout/navigation/`.
