@@ -1,60 +1,74 @@
-import { cloudinaryImage } from '@/lib/cloudinary'
+// Verified guest reviews from our Tripadvisor listing. Quotes are the
+// reviewers' own words; longer reviews are trimmed with an ellipsis.
+export const tripadvisor = {
+  url: 'https://www.tripadvisor.com/Attraction_Review-g293791-d9999161-Reviews-Simien_Ethiopia_Tours_Day_Tours-Addis_Ababa.html',
+  rating: 5.0,
+  reviewCount: 47,
+}
 
 export const testimonials = [
   {
+    title: 'Excellent tour company and great staff, 30 days breathtaking trip to Ethiopia!',
     quote:
-      'Every question we asked before booking got a real answer, not a sales pitch. Once we arrived, that same honesty showed up in every guide they put in front of us.',
-    name: 'Richard Ashworth',
-    detail: 'The Historic Route · United States',
-    image: cloudinaryImage('the-historic-route'),
+      'Simien Ethiopia Tours organized the most amazing trip for us – 30 days in total… Simien Ethiopia Tours are very skilled at crafting bespoke itineraries, adding flights if required to reduce long-distance drives, and offering a range of accommodation, meal and guide options.',
+    name: 'emma',
+    detail: 'Omo Valley & Northern Route · Jan 2019',
+    rating: 5,
   },
   {
+    title: 'A great company to hire for your Ethiopian travel',
     quote:
-      'We changed our minds twice about the pace of the Omo leg, and both times the itinerary was redrawn within a day rather than treated as a fixed contract. That flexibility is rare.',
-    name: 'Amara Nwosu',
-    detail: 'Omo Valley Immersion · Nigeria',
-    image: cloudinaryImage('omo-valley'),
+      'Our trip included Simien trekking, Gheralta churches, the Danakil Depression, and Awash park. From the first contacts, Mihiretab was super responsive to all our questions and ideas… All the segments of our trip went smoothly and we were very well taken care of.',
+    name: 'dnjgraber',
+    detail: 'Fair Oaks, California · Nov 2019',
+    rating: 5,
   },
   {
+    title: 'Excellent Ethiopian Adventure, wonderful Tour Company!',
     quote:
-      'A thirteen-hour layover turned into the highlight of a much longer trip through the region — coffee in a family home, Lucy in person, and back at the gate with time to breathe.',
-    name: 'Freja Lindqvist',
-    detail: 'The Capital, 12-hour layover · Sweden',
-    image: cloudinaryImage('addis-ababa'),
+      'My husband and I thoroughly enjoyed our experience in Ethiopia omo valley for one main reason the flexibility, navigation skills and resourcefulness of our personal guide… our drivers and guide were also very helpful and hospitable.',
+    name: 'Rayna',
+    detail: 'Los Angeles, California · Aug 2021',
+    rating: 5,
   },
   {
+    title: 'Simien Ethiopia Tours, Life Time Experience!',
     quote:
-      'The wolf tracking alone was worth the trip. Our naturalist knew which ridge to wait on before we even saw a print in the frost, and the whole Sanetti morning felt unhurried despite the cold.',
-    name: 'Marcus Bellweather',
-    detail: 'Highlands & Wildlife · United Kingdom',
-    image: cloudinaryImage('bale-mountains'),
+      'The trip was by far one of the greatest and rawest experiences we had ever. The organization was perfect. Mate is very professional and knowledgeable about his country… All the hotel and the lodge were above our expectations.',
+    name: 'usher A',
+    detail: 'Trekking Simien Mountains · Feb 2020',
+    rating: 5,
   },
   {
+    title: 'All perfect!',
     quote:
-      'Dallol looked exactly like the photos and somehow still felt bigger in person. What I did not expect was how careful the whole operation was — water, shade, a medic who actually knew what he was doing.',
-    name: 'Sofia Marchetti',
-    detail: 'Danakil Expedition · Italy',
-    image: cloudinaryImage('danakil-depression'),
+      'Friend and I from Germany spent three days and 2 nights in simien national park with simien Ethiopia tours and must say: Breathtaking! Incredible experience, perfectly organized, awesome food served… Felt safe during the entire trip!',
+    name: 'Fabian R',
+    detail: 'Simien Mountains · Oct 2019',
+    rating: 5,
   },
   {
+    title: 'Wonderful service! Ethiopia is great.',
     quote:
-      'We asked for something slower than a typical circuit and got it — two extra nights at Lake Tana that were never in the original plan, added the moment we said we wanted to linger.',
-    name: 'Daniel Osei',
-    detail: 'Sacred Waters & Coffee · Ghana',
-    image: cloudinaryImage('lake-tana'),
+      'We had a simply wonderful time with Simien Ethiopia Tours team… we particularly will never forget the whole Afar Dankil Volcano, Simien Mountain experience… we would not hesitate to recommend your company and the places you sent us.',
+    name: 'Matty G',
+    detail: 'Couples · Mar 2022',
+    rating: 5,
   },
   {
+    title: 'Spectacular experience',
     quote:
-      'Our guide in the Omo Valley spent the first hour just talking with the village elders before a single photograph was taken. It changed how our kids understood the whole visit.',
-    name: 'Claire Dubois',
-    detail: 'Omo Valley Immersion · France',
-    image: cloudinaryImage('village-homestay'),
+      'The trip was great. It was perfectly organized. The manager did a great job on this trip. He arranged the trip according to my interest. The driver and the guide are also amazing people they made the trip so much fun.',
+    name: 'friendlyadventure',
+    detail: 'Stockholm, Sweden · History Route, 10 Days',
+    rating: 5,
   },
   {
+    title: 'Excellent organisation',
     quote:
-      'I have used four different operators across East Africa over the years. This was the first time the pre-trip planning calls felt like they were actually listening rather than pitching packages.',
-    name: 'Hana Kobayashi',
-    detail: 'The Historic Route · Japan',
-    image: cloudinaryImage('lalibela'),
+      'They organised a trip for my wife and me in the north of the country for two weeks. Excellent driver, very good car, nice hotels... everything perfect. Moreover, they are very flexible and very easy to work with.',
+    name: 'Luc A',
+    detail: 'Northern Ethiopia · Aug 2019',
+    rating: 5,
   },
 ]

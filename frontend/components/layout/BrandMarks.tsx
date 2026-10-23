@@ -39,6 +39,12 @@ export const TikTokMark = () => (
 
 // --- Travel platforms (sit on a cream tile) ---
 
+export const TripadvisorMark = () => (
+  <span className="grid h-full w-full place-items-center rounded-full bg-[#34e0a1] p-[15%]">
+    <Glyph d={brandPaths.tripadvisor} fill="#000" />
+  </span>
+)
+
 export const TripadvisorLogo = () => (
   <span className="flex items-center gap-1.5">
     <span className="grid h-7 w-7 place-items-center rounded-full bg-[#34e0a1] p-1">
