@@ -25,7 +25,7 @@ export async function LongerAdventures() {
         <div className="grid gap-px border border-background/15 bg-background/15 md:grid-cols-3">
           {longer.map((l, i) => (
             <Reveal key={l.title} delay={i * 90} className="h-full">
-              <Link
+              <Link prefetch={false}
                 href={l.href}
                 className="group flex h-full flex-col bg-secondary p-7 transition-colors duration-500 hover:bg-charcoal sm:p-9"
               >

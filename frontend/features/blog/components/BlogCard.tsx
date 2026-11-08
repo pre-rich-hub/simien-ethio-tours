@@ -5,7 +5,7 @@ import { type Post } from '@/features/blog/types/blog.types'
 export function PostCard({ post, wide }: { post: Post; wide?: boolean }) {
   return (
     <article className="group">
-      <Link href={`/blog/${post.slug}`} className="block">
+      <Link prefetch={false} href={`/blog/${post.slug}`} className="block">
         <div
           className={`relative overflow-hidden rounded-xl ${
             wide ? 'aspect-[16/10]' : 'aspect-[4/3]'
