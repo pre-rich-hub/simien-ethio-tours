@@ -51,7 +51,7 @@ export function Destinations() {
           className="flex cursor-grab snap-x snap-mandatory gap-4 overflow-x-auto pb-8 pl-6 pr-6 pt-8 [scrollbar-width:none] active:cursor-grabbing sm:pl-0 sm:pr-10 [&::-webkit-scrollbar]:hidden"
         >
           {featured.map((d) => (
-            <Link
+            <Link prefetch={false}
               key={d.slug}
               href={`/destinations/${d.slug}`}
               onClick={onCardClick}
@@ -84,7 +84,7 @@ export function Destinations() {
             </Link>
           ))}
 
-          <Link
+          <Link prefetch={false}
             href="/destinations"
             onClick={onCardClick}
             draggable={false}

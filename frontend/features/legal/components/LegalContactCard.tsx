@@ -30,7 +30,7 @@ export async function LegalContactCard({ related }: { related: { label: string; 
           {contact.phone}
         </a>
       </div>
-      <Link
+      <Link prefetch={false}
         href={related.href}
         className="group mt-8 inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-accent transition-colors hover:text-background sm:text-xs"
       >
