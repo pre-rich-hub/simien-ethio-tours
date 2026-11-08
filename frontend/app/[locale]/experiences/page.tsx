@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { PageHero } from '@/components/common/PageHero'
 import { CtaBand } from '@/features/enquiries'
 import { activityCategories } from '@/features/experiences/data/experience.data'
@@ -13,8 +13,15 @@ import { LongerAdventures } from '@/features/experiences/components/LongerAdvent
 import { cloudinaryImage } from '@/lib/cloudinary'
 import { buildPageMetadata } from '@/lib/seo/metadata'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocale()
+type PageProps = { params: Promise<{ locale: string }> }
+
+// Cached at the CDN and rebuilt at most once a day to stay within ISR limits.
+export const revalidate = 86400
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Experiences' })
   return buildPageMetadata({
     title: t('heroEyebrow'),
@@ -26,11 +33,12 @@ export async function generateMetadata(): Promise<Metadata> {
   })
 }
 
-export default async function ExperiencesPage() {
+export default async function ExperiencesPage({ params }: PageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const t = await getTranslations('Experiences')
   const tc = await getTranslations('Crumbs')
   const ts = await getTranslations('Shared')
-  const locale = await getLocale()
   // Group on the English category key; display the localized label.
   const activities = getLocalizedActivities(locale)
   const categoryLabels = getActivityCategoryLabels(locale)

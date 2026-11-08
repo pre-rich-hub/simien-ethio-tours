@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { getLocale, getTranslations } from 'next-intl/server'
+import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { Hero } from '@/features/home/components/Hero'
 import { BrandIntro } from '@/features/home/components/BrandIntro'
 import { Destinations } from '@/features/destinations'
@@ -22,8 +22,15 @@ import {
 import { defaultDocumentTitle } from '@/lib/seo/entities'
 import { buildPageMetadata } from '@/lib/seo/metadata'
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocale()
+type PageProps = { params: Promise<{ locale: string }> }
+
+// Cached at the CDN and rebuilt at most once a day to stay within ISR limits.
+export const revalidate = 86400
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
+  const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'Home' })
   return {
     ...buildPageMetadata({
@@ -39,8 +46,9 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Page() {
-  const locale = await getLocale()
+export default async function Page({ params }: PageProps) {
+  const { locale } = await params
+  setRequestLocale(locale)
   const tours = await getToursData(locale)
   const t = await getTranslations('Home')
 

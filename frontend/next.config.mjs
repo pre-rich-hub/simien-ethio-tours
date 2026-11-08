@@ -16,9 +16,10 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    // Serve resized AVIF/WebP instead of the ~2 MB source PNGs.
-    formats: ['image/avif', 'image/webp'],
-    minimumCacheTTL: 2678400,
+    // Cloudinary resizes and picks the format, so these images skip Vercel's
+    // optimizer and do not count toward its usage limits.
+    loader: 'custom',
+    loaderFile: './lib/cloudinary-loader.ts',
     remotePatterns: [
       {
         protocol: 'https',
